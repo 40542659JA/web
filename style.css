@@ -46,6 +46,16 @@ a {
     display: block;
 }
 
+.fixed-bottom {
+    outline: none;
+    text-decoration: none;
+    justify-content: center;
+    text-align:
+    display: block;
+    color: #ff8787;
+    font-size: 12px;
+}
+
 p {
    font-size: 30px;
    text-align: center;
