@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!-- 
+                    thanks for beeing here! 
+                here is my code for quiz page
+-->
+
+<html lang="en">
+    <head>
+        <!-- encoding UTF-8 used -->
+        <meta charset="UTF-8">
+        <!-- file import -->
+        <link rel="stylesheet" href="style.css" type="text/css"/> 
+        <title> Quiz about Poland </title>
+        <a href="main%20page.html"><img src="quiz.PNG" alt="Main Page"></a>
+    </head>
+    <body>
+    <br><br>
+<!-- 
+            DIV with hyperlinks to home and playlist, 
+            description and start quiz button 
+-->
+        <div class="div">
+            <a href="index.html" target="targetframe">Home</a>
+            <a href="songs.html" target="targetframe">Listen to music! </a>
+            <div class="quizsection">
+                <p>On this page you can check your knowledge about Poland. 
+                <br>
+                Do not hesitate and start this really fun quiz!</p>
+                <button onclick="startQuiz()" id="startQuiz">Start quiz</button>
+                <div id="questions"></div> 
+            </div>
+            
+        <script>
+            
+    // This basic quiz is mostly based on
+   // https://stackoverflow.com/questions/45387331/simple-quiz-with-javascript
+  // changed few things and made it work how I wanted
+            
+    var allQuestions = [{
+        question: "What is Fat Thursday? A day in the year where Polish:",
+        choices: ["use a lot of oil to cook", "laugh at each other’s weight", "eat donuts all day", "eat fried chicken all day"],
+        correctAnswer: 2
+      },
+      {
+        question: "Poland is 312 679km2 of total area. It is similar in size to:",
+        choices: ["Portugal ", "Argentina ", "Japan", "New Mexico, USA"],
+        correctAnswer: 3
+      },
+      {
+        question: "Poland is … in the world to develop a constitution:",
+        choices: [" first", "second", "third", "tenth"],
+        correctAnswer: 1
+      },
+      {
+        question: "In Central Europe only Poland is home to:",
+        choices: ["desert", "canyon	", "volcano", "mountains"],
+        correctAnswer: 0
+      },
+      {
+        question: "Flag of Poland consists of two colours:",
+        choices: ["yellow and blue", "white and red	", "green and pink", "white and blue"],
+        correctAnswer: 1
+      },
+      {
+        question: "There is the biggest castle in the world on Polish land. Where is it based?",
+        choices: ["Krakow", "Gdansk", "Malbork", "Opole"],
+        correctAnswer: 2
+      },
+      {
+        question: "As Polish, we might find it offensive and rude when:",
+        choices: ["you chew a gum while talking", "ask for food", "someone wears hat and/or shoes in the Polish house", "someone won’t accept the invitation for the event"],
+        correctAnswer: 2
+      },
+      {
+        question: "On Easter Monday Polish people (what is called in Polish Smingus Dyngus) :",
+        choices: ["play dominos", "play video games	", "play with fire", "split water on each other"],
+        correctAnswer: 3
+      },
+      {
+        question: "White lilies, chrysanthemums and red carnations are reserved exclusively (and should not be purchased for any other occasion) for:",
+        choices: ["funerals", "weddings", "Fat Thursday", "birthdays"],
+        correctAnswer: 0
+      },
+      {
+        question: "What is Pierogi?",
+        choices: ["Polish made scooter", "castle in Poland", "Polish dumplings", "Polish salt mine"],
+        correctAnswer: 2
+      },
+      {
+        question: "What is Marzanna?",
+        choices: ["very popular Polish female name", "a straw doll made to say goodbye to winter", "homemade Polish bread"],
+        correctAnswer: 1
+      },
+      {
+        question: "Who is the most popular Polish footballer?",
+        choices: ["Kamil Stoch", "Adam Malysz", "Robert Kubica", "Robert Lewandowski"],
+        correctAnswer: 3
+      },
+      {
+        question: "Polonez is the name of Polish:",
+        choices: ["dance", "castle", "food"],
+        correctAnswer: 0
+      },
+      {
+        question: "Who was Karol Wojtyla?",
+        choices: ["president", "footballer", "a Pope"],
+        correctAnswer: 2
+      },
+      {
+        question: "What is the population of Poland at the moment?",
+        choices: ["10 mln", "105 mln", "25 mln", "38 mln"],
+        correctAnswer: 3
+      }
+    ];
+
+//function to start quiz
+            
+function startQuiz(){
+    var i;
+    var j;
+    var k;
+    for(i=0; i<allQuestions.length; i++){
+        document.getElementById("questions").innerHTML +='<form id="question">Q'+(i+1)+': '+ allQuestions[i].question;
+        
+        for(j=0; j<allQuestions[i].choices.length; j++){
+        	document.forms[i].innerHTML += '</div><div class="answer"><input name="q1" value="'+ allQuestions[i].choices[j] +'" id="value4" type="checkbox" class="biggercheckbox"/>' + allQuestions[i].choices[j] + '<br/>';
+         }
+     document.getElementById("questions").innerHTML +='</form><br/>';
+    }
+    document.getElementById("questions").innerHTML += '<button onclick="solveQuiz()">Check answers</button>';
+}
+
+//count the result
+            
+function solveQuiz(){
+  var x;
+  var txt = ' ';
+  var i = 0;
+  var correct = 0; 
+  for(i = 0; i < document.forms.length;i++) { 
+    x = document.forms[i]; 
+    for(j = 0; j<x.length; j++){
+      if(x[j].checked) { 
+        correctAnswer = allQuestions[i].correctAnswer;
+        if(x[j].value == allQuestions[i].choices[correctAnswer]){
+          correct += 1;
+        }
+      }
+   }
+ }
+ document.getElementById("questions").innerHTML += 'Correct answers: '+ correct;
+}           
+    document.forms[i].innerHTML += '</div><div class="answer"><input name="q1" value="'+ allQuestions[i].choices[j] +'" id="value4" type="radio" />' + allQuestions[i].choices[j] + '<br/>';
+</script>
+        </div>
+        <br><br>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+                /* CSS style */
+         /* my personal favourite :) */
+body {
+    background-color: #ff8787;
+    background: rgba(255, 135, 135, 0.2);
+}
+
+.div {
+    background-color: rgba(255, 135, 135, 0.5);
+    box-shadow: 10px 10px 2px 1px rgba(255, 135, 135, 1);
+    padding: 40px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 100%;
+    font-size: 40px;
+    justify-content: center;
+    display: block;
+}
+
+img{
+    display:flex;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+button {
+    color: #ff8787;
+    font-size: 25px;
+    font-size: 16px;
+    line-height: 16px;
+    height: 32px;
+    margin: 10px auto 2px;
+    display: block;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+p {
+   font-size: 30px;
+   text-align: center;
+    display: block;
+    color:floralwhite;
+        }
+
+a:link{
+    color: #ec6a6a;
+}
+
+a:visited{
+    color: #ec6a6a;
+}
+
+a:active {
+  background: #f4bbbb;
+  color: #ec6a6a;
+}
+
+.biggercheckbox{
+    zoom: 2;
+}
+
+.answer{
+  color: #ff6c6c;
+}
